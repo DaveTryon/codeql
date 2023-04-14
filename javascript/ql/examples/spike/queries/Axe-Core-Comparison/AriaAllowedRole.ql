@@ -111,12 +111,12 @@ class DefinedRole extends string {
     this = "window"
   }
 
-  boolean isSupportedRole(DOM::AttributeDefinition attr) {
+  boolean isSupportedRole(DOM::AttributeDefinition role) {
     // FUTURE: Exclude deprecated roles.
     // FUTURE: Support cases there the attribute specifies multiple roles in a space-delimited collection
 
     // For debugging, replace "toLowerCase" with "toUpperCase" and all values will fail
-    if (unquotedString(attr.getValueNode().toString()).trim().toLowerCase() = this.toString())
+    if (unquotedString(role.getValueNode().toString()).trim().toLowerCase() = this.toString())
     then result = true
     else result = false
   }
