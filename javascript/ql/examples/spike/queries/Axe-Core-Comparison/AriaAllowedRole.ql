@@ -10,7 +10,6 @@ string unquotedString(string input){
   result = input.replaceAll("\"", "")
 }
 
-
 class DefinedRole extends string {
   DefinedRole() {
     this = "alert" or
@@ -111,20 +110,58 @@ class DefinedRole extends string {
     this = "window"
   }
 
+  boolean isDeprecatedRole() {
+    // For now, no roles are deprecated. Add them with an if statement, as commented out below
+    // if this = "deprecrated_role" then result = true else
+    result = false
+  }
+
   boolean isSupportedRole(DOM::AttributeDefinition role) {
-    // FUTURE: Exclude deprecated roles.
     // FUTURE: Support cases there the attribute specifies multiple roles in a space-delimited collection
 
-    // For debugging, replace "toLowerCase" with "toUpperCase" and all values will fail
-    if (unquotedString(role.getValueNode().toString()).trim().toLowerCase() = this.toString())
+    if (
+      // For debugging, replace "toLowerCase" with "toUpperCase" and all values will fail
+      unquotedString(role.getValueNode().toString()).trim().toLowerCase() = this.toString()
+      and 
+      this.isDeprecatedRole() = false
+    )
     then result = true
     else result = false
   }
+
+  string getRequiredAttributes() {
+    if this = "checkbox" then result = ["aria-checked"]
+    else if this = "combobox" then result = ["aria-expanded", "aria-controls"]
+    else if this = "heading" then result = ["aria-level"]
+    else if this = "menuitemcheckbox" then result = ["aria-checked"]
+    else if this = "menuitemradio" then result = ["aria-checked"]
+    else if this = "meter" then result = ["aria-valuenow"]
+    else if this = "widget" then result = ["aria-checked"]
+    else if this = "scrollbar" then result = ["aria-valuenow"]
+    else if this = "separator" then result = ["aria-valuenow"]
+    else if this = "slider" then result = ["aria-valuenow"]
+    else if this = "switch" then result = ["aria-checked"]
+    else result = [""]
+  }
 }
 
-// Note: Multiple roles can be specified, along the lines of "role1 role2". The axe-core
-// rule will split these out and try them all. This check only handles the simplest case.
+// Analog of aria-allowed-role (debugged and working)
 from DOM::ElementDefinition e
   where exists(e.getAttributeByName("role"))
-  and not exists(any(DefinedRole r | r.isSupportedRole(e.getAttributeByName("role")) = true))
+  and not exists(any(DefinedRole role | role.isSupportedRole(e.getAttributeByName("role")) = true))
 select e, unquotedString(e.getAttributeByName("role").getValueNode().toString())
+
+// Analog of aria-required-attr (debugged and working, but ignores focus consideration and closed comboboxes)
+from DOM::ElementDefinition e
+//   where exists(e.getAttributeByName("role"))
+//   and exists(any(DefinedRole role | (
+//     role.isSupportedRole(e.getAttributeByName("role")) = true
+//     and exists(any(string requiredAttribute | (
+//       requiredAttribute = role.getRequiredAttributes()
+//       and
+//       requiredAttribute != ""
+//       and
+//       not exists(e.getAttributeByName(requiredAttribute))
+//     )))
+//     )))
+// select e, unquotedString(e.getAttributeByName("role").getValueNode().toString())
