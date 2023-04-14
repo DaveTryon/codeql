@@ -5,113 +5,118 @@
 
 import javascript
 
+bindingset[input]
+string unquotedString(string input){
+  result = input.replaceAll("\"", "")
+}
+
+
 class DefinedRole extends string {
   DefinedRole() {
-    // The quotes here are because that's how the value is reported. Since I don't yet
-    // know how to strip them cleanly, I'm cluttering up the table
-    this = "\"alert\"" or
-    this = "\"alertdialog\"" or
-    this = "\"application\"" or
-    this = "\"article\"" or
-    this = "\"banner\"" or
-    this = "\"blockquote\"" or
-    this = "\"button\"" or
-    this = "\"caption\"" or
-    this = "\"cell\"" or
-    this = "\"checkbox\"" or
-    this = "\"code\"" or
-    this = "\"columnheade\"r" or
-    this = "\"combobox\"" or
-    this = "\"command\"" or
-    this = "\"comment\"" or
-    this = "\"complementary\"" or
-    this = "\"composite\"" or
-    this = "\"contentinfo\"" or
-    this = "\"definition\"" or
-    this = "\"deletion\"" or
-    this = "\"dialog\"" or
-    this = "\"directory\"" or   // deprecated in Aria 1.2 proposal
-    this = "\"document\"" or
-    this = "\"emphasis\"" or
-    this = "\"feed\"" or
-    this = "\"figure\"" or
-    this = "\"form\"" or
-    this = "\"grid\"" or
-    this = "\"gridcell\"" or
-    this = "\"group\"" or
-    this = "\"heading\"" or
-    this = "\"img\"" or
-    this = "\"input\"" or
-    this = "\"insertion\"" or
-    this = "\"landmark\"" or
-    this = "\"link\"" or
-    this = "\"list\"" or
-    this = "\"listbox\"" or
-    this = "\"listitem\"" or
-    this = "\"log\"" or
-    this = "\"main\"" or
-    this = "\"marquee\"" or
-    this = "\"math\"" or
-    this = "\"menu\"" or
-    this = "\"menubar\"" or
-    this = "\"menuitem\"" or
-    this = "\"menuitemcheckbox\"" or
-    this = "\"menuitemradio\"" or
-    this = "\"meter\"" or
-    this = "\"mark\"" or
-    this = "\"navigation\"" or
-    this = "\"none\"" or
-    this = "\"note\"" or
-    this = "\"option\"" or
-    this = "\"paragraph\"" or
-    this = "\"presentation\"" or
-    this = "\"progressbar\"" or
-    this = "\"radio\"" or
-    this = "\"radiogroup\"" or
-    this = "\"range\"" or
-    this = "\"region\"" or
-    this = "\"roletype\"" or
-    this = "\"row\"" or
-    this = "\"rowgroup\"" or
-    this = "\"rowheader\"" or
-    this = "\"scrollbar\"" or
-    this = "\"search\"" or
-    this = "\"searchbox\"" or
-    this = "\"section\"" or
-    this = "\"sectionhead\"" or
-    this = "\"select\"" or
-    this = "\"separator\"" or
-    this = "\"slider\"" or
-    this = "\"spinbutton\"" or
-    this = "\"strong\"" or
-    this = "\"structure\"" or
-    this = "\"subscript\"" or
-    this = "\"superscript\"" or
-    this = "\"switch\"" or
-    this = "\"suggestion\"" or
-    this = "\"tab\"" or
-    this = "\"table\"" or
-    this = "\"tablist\"" or
-    this = "\"tabpanel\"" or
-    this = "\"term\"" or
-    this = "\"text\"" or
-    this = "\"textbox\"" or
-    this = "\"time\"" or
-    this = "\"timer\"" or
-    this = "\"toolbar\"" or
-    this = "\"tooltip\"" or
-    this = "\"tree\"" or
-    this = "\"treegrid\"" or
-    this = "\"treeitem\"" or
-    this = "\"widget\"" or
-    this = "\"window\""
+    this = "alert" or
+    this = "alertdialog" or
+    this = "application" or
+    this = "article" or
+    this = "banner" or
+    this = "blockquote" or
+    this = "button" or
+    this = "caption" or
+    this = "cell" or
+    this = "checkbox" or
+    this = "code" or
+    this = "columnheader" or
+    this = "combobox" or
+    this = "command" or
+    this = "comment" or
+    this = "complementary" or
+    this = "composite" or
+    this = "contentinfo" or
+    this = "definition" or
+    this = "deletion" or
+    this = "dialog" or
+    this = "directory" or   // deprecated in Aria 1.2 proposal
+    this = "document" or
+    this = "emphasis" or
+    this = "feed" or
+    this = "figure" or
+    this = "form" or
+    this = "grid" or
+    this = "gridcell" or
+    this = "group" or
+    this = "heading" or
+    this = "img" or
+    this = "input" or
+    this = "insertion" or
+    this = "landmark" or
+    this = "link" or
+    this = "list" or
+    this = "listbox" or
+    this = "listitem" or
+    this = "log" or
+    this = "main" or
+    this = "marquee" or
+    this = "math" or
+    this = "menu" or
+    this = "menubar" or
+    this = "menuitem" or
+    this = "menuitemcheckbox" or
+    this = "menuitemradio" or
+    this = "meter" or
+    this = "mark" or
+    this = "navigation" or
+    this = "none" or
+    this = "note" or
+    this = "option" or
+    this = "paragraph" or
+    this = "presentation" or
+    this = "progressbar" or
+    this = "radio" or
+    this = "radiogroup" or
+    this = "range" or
+    this = "region" or
+    this = "roletype" or
+    this = "row" or
+    this = "rowgroup" or
+    this = "rowheader" or
+    this = "scrollbar" or
+    this = "search" or
+    this = "searchbox" or
+    this = "section" or
+    this = "sectionhead" or
+    this = "select" or
+    this = "separator" or
+    this = "slider" or
+    this = "spinbutton" or
+    this = "strong" or
+    this = "structure" or
+    this = "subscript" or
+    this = "superscript" or
+    this = "switch" or
+    this = "suggestion" or
+    this = "tab" or
+    this = "table" or
+    this = "tablist" or
+    this = "tabpanel" or
+    this = "term" or
+    this = "text" or
+    this = "textbox" or
+    this = "time" or
+    this = "timer" or
+    this = "toolbar" or
+    this = "tooltip" or
+    this = "tree" or
+    this = "treegrid" or
+    this = "treeitem" or
+    this = "widget" or
+    this = "window"
   }
 
   boolean isSupportedRole(DOM::AttributeDefinition attr) {
-    // FUTURE: Add deprecated roles.
+    // FUTURE: Exclude deprecated roles.
+    // FUTURE: Support cases there the attribute specifies multiple roles in a space-delimited collection
 
     // For debugging, replace "toLowerCase" with "toUpperCase" and all values will fail
-    if (attr.getValueNode().toString().trim().toLowerCase() = this.toString())
+    if (unquotedString(attr.getValueNode().toString()).trim().toLowerCase() = this.toString())
     then result = true
     else result = false
   }
@@ -122,4 +127,4 @@ class DefinedRole extends string {
 from DOM::ElementDefinition e
   where exists(e.getAttributeByName("role"))
   and not exists(any(DefinedRole r | r.isSupportedRole(e.getAttributeByName("role")) = true))
-select e, e.getAttributeByName("role").getValueNode().toString()
+select e, unquotedString(e.getAttributeByName("role").getValueNode().toString())
