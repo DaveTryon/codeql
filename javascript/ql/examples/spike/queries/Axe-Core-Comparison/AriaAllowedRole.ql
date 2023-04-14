@@ -152,7 +152,7 @@ from DOM::ElementDefinition e
 select e, unquotedString(e.getAttributeByName("role").getValueNode().toString())
 
 // Analog of aria-required-attr (debugged and working, but ignores focus consideration and closed comboboxes)
-from DOM::ElementDefinition e
+// from DOM::ElementDefinition e
 //   where exists(e.getAttributeByName("role"))
 //   and exists(any(DefinedRole role | (
 //     role.isSupportedRole(e.getAttributeByName("role")) = true
