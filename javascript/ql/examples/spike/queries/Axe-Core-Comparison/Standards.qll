@@ -1,15 +1,18 @@
 import javascript
 
 module Standards {
+  // Helper function to get a normalized value from an attribute
   string getAttributeValue(DOM::AttributeDefinition attribute) {
     result = attribute.getValueNode().toString().trim().toLowerCase().replaceAll("\"", "")
   }
 
+  // Helper function to get a normalized value from an element and a role value
   bindingset[attributeName]
   string getElementAttributeValue(DOM::ElementDefinition element, string attributeName) {
     result = getAttributeValue(element.getAttributeByName(attributeName))
   }
 
+  // All defined roles
   predicate ariaRoles(string s) {
     s in [
       "alert", "alertdialog", "application", "article", "banner", "blockquote", "button",
@@ -29,6 +32,7 @@ module Standards {
     ]
   }
   
+  // Class to expose functionality based on role
   class DefinedRole extends string {
     DefinedRole() {
       ariaRoles(this)
