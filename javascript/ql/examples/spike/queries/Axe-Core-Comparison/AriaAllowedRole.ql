@@ -1,4 +1,4 @@
-/*
+/**
  * @name Aria Allowed Role
  * @description Fail if a DOMElement's defined role is not allowed or unsupported
  */

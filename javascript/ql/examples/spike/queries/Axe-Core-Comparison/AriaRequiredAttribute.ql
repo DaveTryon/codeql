@@ -1,4 +1,4 @@
-/*
+/**
  * @name Aria Required Attribute
  * @description Fail if a DOMElement omits an attribute required by the type
  */
